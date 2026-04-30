@@ -18,7 +18,7 @@
 
 ## `// what is D3adPhish?`
 
-GoPhish is the industry standard for phishing simulations — but out of the box it announces itself to every blue team and email gateway that knows what to look for.
+GoPhish is the industry standard for phishing simulations , but out of the box it announces itself to every blue team and email gateway that knows what to look for.
 
 D3adPhish patches the GoPhish source to strip all detectable fingerprints before compiling, producing a hardened binary ready for professional engagements.
 
@@ -132,13 +132,13 @@ Replace the default `config.json` with this template:
 
 ## `// based on`
 
-[GoPhish](https://github.com/gophish/gophish) by Jordan Wright — MIT License
+[GoPhish](https://github.com/gophish/gophish) by Jordan Wright - MIT License
 
 ---
 
 ## `// license`
 
-MIT License — see [LICENSE](LICENSE)
+MIT License - see [LICENSE](LICENSE)
 
 ---
 
