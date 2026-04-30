@@ -51,12 +51,10 @@ patch_xmailer() {
   sed -i '/msg.SetHeader("X-Mailer"/d' gophish-src/models/email_request.go
   sed -i '/msg.SetHeader("X-Gophish-Contact"/d' gophish-src/models/email_request.go
   sed -i '/if conf.ContactAddress != ""/,/}/{ /msg.SetHeader("X-Gophish-Contact"/d }' gophish-src/models/email_request.go
-# Remove unused config import
-  sed -i '/"github.com\/gophish\/gophish\/config"/d' gophish-src/models/email_request.go
-  # Patch maillog.go as well
+  sed -i '/gophish\/gophish\/config/d' gophish-src/models/email_request.go
   sed -i '/msg.SetHeader("X-Mailer"/d' gophish-src/models/maillog.go
   sed -i '/msg.SetHeader("X-Gophish-Contact"/d' gophish-src/models/maillog.go
-  sed -i '/"github.com\/gophish\/gophish\/config"/d' gophish-src/models/maillog.go
+  sed -i '/gophish\/gophish\/config/d' gophish-src/models/maillog.go
   echo -e "${GREEN}[+] X-Mailer and X-Gophish-Contact headers removed.${NC}"
 }
 
@@ -80,7 +78,7 @@ patch_session() {
 
 patch_testmail() {
   echo -e "${CYAN}[*] Patching test email body...${NC}"
-  sed -i 's/your gophish\\\\nconfiguration/your mail\\nconfiguration/' gophish-src/controllers/api/util.go
+  sed -i 's/your gophish\\nconfiguration/your mail\\nconfiguration/' gophish-src/controllers/api/util.go
   echo -e "${GREEN}[+] Test email body patched.${NC}"
 }
 
