@@ -56,6 +56,7 @@ patch_xmailer() {
   # Patch maillog.go as well
   sed -i '/msg.SetHeader("X-Mailer"/d' gophish-src/models/maillog.go
   sed -i '/msg.SetHeader("X-Gophish-Contact"/d' gophish-src/models/maillog.go
+  sed -i '/"github.com\/gophish\/gophish\/config"/d' gophish-src/models/maillog.go
   echo -e "${GREEN}[+] X-Mailer and X-Gophish-Contact headers removed.${NC}"
 }
 
